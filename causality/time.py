@@ -61,10 +61,10 @@ class Time:
 			self.day-=1
 			
 	def update(self):
-		self.update_hour()
-		self.update_day()
 		self.update_month()
-		
+		self.update_day()
+		self.update_hour()
+
 	def update_repeated(self):
 		before=self.value()
 		self.update()
