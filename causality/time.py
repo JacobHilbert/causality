@@ -7,6 +7,7 @@ class Time:
 		self.month=month
 		self.day=day
 		self.hour=hour
+		self.update_repeated()
 		
 	# representation of the class
 	
@@ -43,12 +44,12 @@ class Time:
 			self.month+=12
 	
 	def update_day(self):
-		max_days=month_days.get(self.month,default=float("inf"))+(self.month==2)*self.leap()
-		if self.days>max_days:
-			self.days-=max_days
+		max_days=month_days.get(self.month,float("inf"))+(self.month==2)*self.leap()
+		if self.day>max_days:
+			self.day-=max_days
 			self.month+=1
-		if self.days<1:
-			self.days+=max_days
+		if self.day<1:
+			self.day+=max_days
 			self.month-=1
 			
 	def update_hour(self):
@@ -65,10 +66,10 @@ class Time:
 		self.update_month()
 		
 	def update_repeated(self):
-		before=self.copy()
+		before=self.value()
 		self.update()
-		while self!=before:
-			before=self.copy()
+		while self.value()!=before:
+			before=self.value()
 			self.update()
 	
 	# calculation
