@@ -45,7 +45,22 @@ class Time:
 			self.days-=max_days
 			self.month+=1
 			
-	
+	def update_hour(self):
+		if self.hour>23:
+			self.hour-=24
+			self.day+=1
+			
+	def update(self):
+		self.update_hour()
+		self.update_day()
+		self.update_month()
+		
+	def update_repeated(self):
+		before=self.copy()
+		self.update()
+		while self!=before:
+			before=self.copy()
+			self.update()
 	
 	# calculation
 	
