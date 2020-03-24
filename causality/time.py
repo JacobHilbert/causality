@@ -34,6 +34,18 @@ class Time:
 	
 	# update
 	
+	def update_month(self):
+		if self.month>12:
+			self.year+=1
+			self.month-=12
+	
+	def update_day(self):
+		max_days=month_days.get(self.month,default=float("inf"))+(self.month==2)*self.leap()
+		if self.days>max_days:
+			self.days-=max_days
+			self.month+=1
+			
+	
 	
 	# calculation
 	
