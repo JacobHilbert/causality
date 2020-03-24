@@ -32,6 +32,21 @@ class Time:
 	def __le__(self,other):
 		return (self==other or self<other)
 	
+	# update
+	
+	
 	# calculation
-    
-   
+	
+	def leap(self):
+		return False if self.year%4!=0 else (True if self.year%100!=0 else (False if self.year%400!=0 else True))
+	
+ 
+	
+	
+		
+		
+		
+		
+		
+		
+		
