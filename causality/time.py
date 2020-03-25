@@ -81,6 +81,30 @@ class Time:
 	def add_days(self,num):
 		self.day+=1
 		self.update_repeated()
+		
+	def hours_to(self,other):
+		if self==other:
+			return True
+		elif self < other:
+			h=0
+			selfcopy=self.copy()
+			while selfcopy < other:
+				selfcopy.add_hours(1)
+			return h
+		elif self > other:
+			return other.hours_to(self)
+	
+	def days_to(self,other):
+		if abs(self.value()-other.value())<100:
+			return 0
+		elif self < other:
+			d=0
+			selfcopy=self.copy()
+			while selfcopy < other:
+				selfcopy.add_day(1)
+			return d
+		elif self > other:
+			return other.days_to(self)
 	
 	def leap(self):
 		return False if self.year%4!=0 else (True if self.year%100!=0 else (False if self.year%400!=0 else True))
