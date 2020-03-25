@@ -74,6 +74,14 @@ class Time:
 	
 	# calculation
 	
+	def add_hours(self,num):
+		self.hour+=num
+		self.update_repeated()
+		
+	def add_days(self,num):
+		self.day+=1
+		self.update_repeated()
+	
 	def leap(self):
 		return False if self.year%4!=0 else (True if self.year%100!=0 else (False if self.year%400!=0 else True))
 	
