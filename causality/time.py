@@ -105,7 +105,7 @@ class Time:
 				d+=1
 				selfcopy.add_days(1)
 			return d
-		elif self > other:
+		elif abs(self.value()-other.value())>0:
 			return -other.days_to(self)
 	
 	def leap(self):
