@@ -93,7 +93,7 @@ class Time:
 				h+=1
 			return h
 		elif self > other:
-			return other.hours_to(self)
+			return -other.hours_to(self)
 	
 	def days_to(self,other):
 		if abs(self.value()-other.value())<100:
@@ -106,7 +106,7 @@ class Time:
 				selfcopy.add_days(1)
 			return d
 		elif self > other:
-			return other.days_to(self)
+			return -other.days_to(self)
 	
 	def leap(self):
 		return False if self.year%4!=0 else (True if self.year%100!=0 else (False if self.year%400!=0 else True))
