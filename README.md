@@ -28,10 +28,10 @@ The main concept here is the `Event`, a thing that happens in a time and a space
 ## To do:
 
 - [ ] Write the abstract python classes structure.
-    - [ ] Implement my own way to manage time-date data.
-        - [ ] This includes full calendary functionality,
-        - [ ] Timespan between date objects
-        - [ ] And pretty formatting.
+    - [x] Implement my own way to manage time-date data.
+        - [x] This includes full calendary functionality,
+        - [x] Timespan between date objects
+        - [x] And pretty formatting.
     - [ ] Implement my own way to manage places. (Maybe like the directory management on unix-like systems...)
     - [ ] Implement `Tags`
     - [ ] Implement `Parts`
