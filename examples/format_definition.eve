@@ -1,0 +1,29 @@
+head {
+	// Constitutive properties of the event
+	title: Title With Spaces and Formatting // needs not to match filename
+	time: year/mt/dy/hr/mn // hour and minute are optional, Defaut is noon.
+	place: Country/City/Street //custom structure athough names must be in PascalCase.
+	tags: #Character #Mood #Object #CustomTags	// # at the beggining are not mandatory
+
+	// Narrative properties of the event
+	arc: Arc Name
+	chapter: Chapter Name
+	scene: Scene name
+	vis: Flashback|None|Main|Partial // this is intented to be full customizable
+} end head
+
+summary {
+	Summary goes here. Empty lines will be ignored. No more than one paragraph.
+} end summary
+
+contents {
+	Paragraphs go here, separated by empty lines.
+	One breakline is not enough to make another paragraph. Multiple consequences [cons: (event name, 2 /*paragraph number*/) ] can go anywhere [cons: (event name,4)] in a paragraph. We also have mentions (or references) [ref: Event name, 1]
+
+	Paragraphs numbering begin with 1.
+	Attempts to reference paragraph 0 will be treated as tageting the summary paragraph.
+	That can be viewed as targeting the whole event. Is the same thing.
+
+	[causes: (event name, 4), (another event name, 3)]
+	Causes must be at the beggining of a paragraph. The system is designed to be redundant, so both cause and consequence event must declare each other as such. Else it will raise a ConsistencyError.
+} end contents
